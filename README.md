@@ -4,7 +4,7 @@ To do this, it temporarily marks the original slides as "hidden", then creates o
 
 Optionally, slide numbers (in format *\<old slide number\>**-**\<animation step\>*) can be added to the result.
 
-It is also possible to suppress the "restore" function and edit the generated slides. This is to allow the user to manually fix any parts of the conversion that the automatic process haven't worked properly (I'm not aware of any, but I'm sure there are some!)
+It is also possible to suppress the "restore" function and edit the generated slides. This is to allow the user to manually fix any parts of the conversion that the automatic process hasn't converted properly (I'm not aware of any, but I'm sure there are some!)
 
 When the macro is run on a presentation that has already been converted, but not restored, it will warn the user and restore the presentation to normal.
 
