@@ -9,14 +9,14 @@ When the macro is run on a presentation that has already been converted, but not
 
 INSTRUCTIONS
 
-From within Powerpoint, create a new blank presentation and delete the default slide. Save this as a Powerpoint Macro-Enabled Presentation.
+From within Powerpoint, create a new blank presentation and delete the default slide. Save this as an empty Powerpoint Macro-Enabled Presentation, e.g. "*Macros.pptm*".
 
 Now go to *View*, *Macros* and enter some text in the *Macro Name* field. It doesn't matter what text is entered, this is done just to get into the VBA editor. Press *Create*.
 
-Once in the editor, go to the *Project Explorer* pane. (If you can't see this, click *View*, *Project Explorer*). Right-click on *Module 1* and remove it.
+Once in the editor, go to the *Project Explorer* pane. (If you can't see this, click *View*, *Project Explorer*). Right-click on *Module1* and remove it.
 
-Now click *File*, *Import File* and import *PresentationToPDF.bas* and each of the *.cls* files in turn. Once this has been done, click *File*, *Close and Return to Microsoft Powerpoint*. Once back in Powerpoint, save the empty presentation as (say) *Macros.pptm*.
+Now click *File*, *Import File* and import *PresentationToPDF.bas* and each of the *.cls* files in turn. Once this has been done, click *File*, *Close and Return to Microsoft Powerpoint*. Once back in Powerpoint, save the new presentation, which will now include the uploaded VBA macro code.
 
-To convert a real presentation, open both it and *Macros.pptm*. From within the real presentation select *View*, *Macros* and (at the bottom of the dialogue) select *Macro in: Macros.pptm*. Select *PrintToPDF*, press *Run*, then respond to the prompts displayed by the macro.
+To convert a real presentation, open both it and *Macros.pptm*. From within the real presentation select *View*, *Macros* and (at the bottom of the dialogue) select *Macros.pptm* from the drop-down below *Macro in:*. Then, from within the body of the dialog, select *PrintToPDF* and press *Run*. The code will then run - simply respond to the prompts displayed.
 
-TECHNICAL NOTE: To perform the conversion, the macro deletes from the generated slide any shapes that should not be visible at the current animation step. Shapes containing animated paragraphs are left in place, but those paragraphs that should not be visible are camouflaged rather than deleted, i.e. the font colour is changed to match the shape colour. This ensures other, visible paragraphs do not move or increase in size within the shape.
+TECHNICAL NOTE: To perform the conversion, the macro deletes from the generated slide any shapes that should not be visible at the current animation step. Shapes containing animated paragraphs are left in place, but those paragraphs within them that should not be visible are camouflaged rather than deleted, i.e. the font colour is changed to match the shape colour. This ensures other, visible paragraphs do not move or increase in size within a shape.
