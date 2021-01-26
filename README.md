@@ -13,7 +13,7 @@ From within Powerpoint, create a new blank presentation and delete the default s
 
 Now go to *View*, *Macros* and enter some text in the *Macro Name* field. It doesn't matter what text is entered, this is done just to get into the VBA editor. Press *Create*.
 
-Once in the editor, go to the *Project Explorer* pane. (If you can't see this, click *View*, *Project Explorer*. Right-click on *Module 1* and remove it.
+Once in the editor, go to the *Project Explorer* pane. (If you can't see this, click *View*, *Project Explorer*). Right-click on *Module 1* and remove it.
 
 Now click *File*, *Import File* and import *PresentationToPDF.bas* and each of the *.cls* files in turn. Once this has been done, click *File*, *Close and Return to Microsoft Powerpoint*. Once back in Powerpoint, save the empty presentation as (say) *Macros.pptm*.
 
