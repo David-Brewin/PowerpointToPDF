@@ -6,8 +6,10 @@ Option Explicit
 Public Enum SlideNumberingOption
     NoNumbers
     BottomLeft
+    BottomCentre
     BottomRight
     TopLeft
+    TopCentre
     TopRight
     CancelMacro
 End Enum
@@ -103,8 +105,10 @@ Function GetNumberingOption() As SlideNumberingOption
     Do
         response = InputBox(Prompt:="Type one of " & vbCrLf _
             & "    'TL' to print at Top Left" & vbCrLf _
+            & "    'TC' to print at Top Centre" & vbCrLf _
             & "    'TR' to print at Top Right" & vbCrLf _
             & "    'BR' to print at Bottom Right" & vbCrLf _
+            & "    'BC' to print at Bottom Centre" & vbCrLf _
             & "    'BL' to print at Bottom Left" & vbCrLf _
             & "or type 'N' to omit slide numbers", _
             Title:="Slide Numbering")
@@ -112,10 +116,14 @@ Function GetNumberingOption() As SlideNumberingOption
         Select Case response
             Case "BL"
                 GetNumberingOption = BottomLeft: Exit Do
+            Case "BC"
+                GetNumberingOption = BottomCentre: Exit Do
             Case "BR"
                 GetNumberingOption = BottomRight: Exit Do
             Case "TL"
                 GetNumberingOption = TopLeft: Exit Do
+            Case "TC"
+                GetNumberingOption = TopCentre: Exit Do
             Case "TR"
                 GetNumberingOption = TopRight: Exit Do
             Case "N"
@@ -223,10 +231,14 @@ Sub AddSlideNumber( _
     Select Case numberingOption
         Case BottomLeft
             ppAlignment = ppAlignLeft: xPos = margin: yPos = (slideHeight - boxHeight - margin)
+        Case BottomCentre
+            ppAlignment = ppAlignCenter: xPos = (slideWidth - boxWidth) / 2: yPos = (slideHeight - boxHeight - margin)
         Case BottomRight
             ppAlignment = ppAlignRight: xPos = (slideWidth - boxWidth - margin): yPos = (slideHeight - boxHeight - margin)
         Case TopLeft
             ppAlignment = ppAlignLeft: xPos = margin: yPos = margin
+        Case TopCentre
+            ppAlignment = ppAlignCenter: xPos = (slideWidth - boxWidth) / 2: yPos = margin
         Case TopRight
             ppAlignment = ppAlignRight: xPos = (slideWidth - boxWidth - margin): yPos = margin
     End Select
